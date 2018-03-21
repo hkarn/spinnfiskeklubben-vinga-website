@@ -1,53 +1,80 @@
-import Layout from '../components/MyLayout.js'
-import Link from 'next/link'
-import "../styles/styles.scss"
+import Layout from '../components/MyLayout';
+import Link from 'next/link';
+import _JSXStyle from 'styled-jsx/style';
 
-function getPosts () {
-  return [
-    { id: 'hello-nextjs', title: 'Hello Next.js'},
-    { id: 'learn-nextjs', title: 'Learn Next.js is awesome'},
-    { id: 'deploy-nextjs', title: 'Deploy apps with ZEIT'},
-  ]
-}
+let i = 1;
 
-const PostLink = ({ post }) => (
-  <li className="example">
-    <Link as={`/p/${post.id}`} href={`/post?title=${post.title}`}>
-      <a>{post.title}</a>
-    </Link>
-  </li>
-)
+const slides = [
+  'view.jpg',
+  'view2.jpg',
+  'view3.jpg',
+  'view4.jpg'
+];
+
+setInterval(() => {
+  if (i >= slides.length - 1) {
+    i = 1;
+  } else {
+    i++;
+  }
+}, 1000);
+
+const setSlide = () => (
+  <div id="slide" className="outerCover" style={{backgroundImage: 'url("static/photos/' + slides[i] + '")'}}>
+    <_JSXStyle styleId="outerCover" css={`
+    div.outerCover {
+      color: white; 
+      width: 100%; 
+      height: 100%; 
+      overflow: hidden;
+      position: absolute;
+      text-align: center; 
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  `} />
+  </div>);
+
+const renderSlide = i => {
+  if (i===1 || i===3) {
+    return setSlide();
+  }
+  return (<div />);
+};
 
 export default () => (
   <Layout>
-    <h1>My Blog</h1>
-    <ul>
-      {getPosts().map((post) => (
-        <PostLink key={post.id} post={post}/>
-      ))}
-    </ul>
-    <style jsx>{`
-      h1, a {
-        font-family: "Arial";
+    <div className="slideWrapper" style={{backgroundImage: 'url("static/photos/' + slides[i - 1] + '")'}}>
+      {renderSlide(i)}
+      <div className="innerCoverText">
+        <h1>Välkommen till Rävholmen</h1>
+        <a className="btn btn-success btn-lg">Läs mer om vår stuga &amp; verksamhet</a>
+      </div>
+    </div>
+    <_JSXStyle styleId="slideWrapper" css={`
+      div.slideWrapper {
+        color: white; 
+        width: 100%; 
+        height: calc(100% - 113px); 
+        overflow: hidden;
+        position: absolute;
+        text-align: center; 
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
       }
-
-      ul {
-        padding: 0;
+    `} />
+    <_JSXStyle styleId="innerCoverText" css={`
+      div.innerCoverText {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);"
       }
-
-      li {
-        list-style: none;
-        margin: 5px 0;
-      }
-
-      a {
-        text-decoration: none;
-        color: blue;
-      }
-
-      a:hover {
-        opacity: 0.6;
-      }
-    `}</style>
+    `} />
   </Layout>
-)
+);

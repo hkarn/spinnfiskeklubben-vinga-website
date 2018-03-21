@@ -1,5 +1,100 @@
-$font-size: 50px;
-.example {
-  font-size: $font-size;
-  background-color: red;
+@import './_variables.scss';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
+
+body {
+  font-family: $font-stack;
+}
+
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary-hover;
+  &:hover {
+    background-color: $primary-hover;
+    border-color: $primary;
+  }
+}
+
+.btn-success {
+  background-color: $success;
+  border-color: $success-hover;
+  &:hover {
+    background-color: $success-hover;
+    border-color: $success;
+  }
+}
+
+.custom-responsive-text {
+  font-size: 110%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sponsorhuset {
+  height: auto;
+} 
+
+#slide {
+  left: -100%;
+  -webkit-animation: slide 1.5s forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 1.5s forwards;
+  animation-delay: 1s;
+}
+
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  100% { left: 0; }
+}
+
+
+@media (min-width: 576px) { 
+  .sponsorhuset {
+    width: 155px
+  } 
+}
+
+
+@media (min-width: 768px) { 
+  .sponsorhuset {
+  width: 155px
+  } 
+}
+
+@media (min-width: 992px) { 
+  .sponsorhuset {
+    width: 145px
+  }
+  .custom-responsive-text {
+    font-size: calc(69% + .5vw);
+  }
+ }
+
+@media (min-width: 1200px) { 
+  .sponsorhuset {
+    width: 160px
+  }
+  h2.topLogoText {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 592px) {
+  h2.topLogoText {
+    font-size: 74%;
+    margin: 0;
+  }
+}
+
+

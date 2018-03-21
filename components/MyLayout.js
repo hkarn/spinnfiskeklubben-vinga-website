@@ -1,16 +1,12 @@
-import Header from './Header'
+import Header from './Header';
+import '../styles/styles.scss';
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-}
-
-const Layout = (props) => (
-  <div style={layoutStyle}>
+const Layout = props => (
+  <div>
     <Header />
+    { /* eslint-disable-next-line */ }
     {props.children}
   </div>
-)
+);
 
-export default Layout
+export default Layout;

@@ -60,6 +60,8 @@ typings/
 out/*
 .next/*
 OLD/
+static/photos/*
+!static/photos/notice.md
 
 
 

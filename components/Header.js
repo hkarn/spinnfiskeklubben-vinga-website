@@ -1,18 +1,45 @@
-import Link from 'next/link'
-
-const linkStyle = {
-  marginRight: 15
-}
+import Link from 'next/link';
+import _JSXStyle from 'styled-jsx/style';
+import MainMenu from './MainMenu';
 
 const Header = () => (
-    <div>
-        <Link href="/">
-          <a style={linkStyle}>Home</a>
-        </Link>
-        <Link href="/about">
-          <a style={linkStyle}>About</a>
-        </Link>
-    </div>
-)
 
-export default Header
+  <div className="topWrapper container-fluid sticky-top">
+    <nav className="navbar navbar-light bg-white py-1 px-2">
+      <Link href="/">
+        <a className="navbar-brand d-flex align-items-center" href="/">
+          <img className="inline-block p-2" src="./static/images/logo.jpg" alt="Spinnfiskeklubben Vinga Logo" title="Till startsidan" />
+          <h2 className="topLogoText inline-block" title="Till startsidan">Spinnfiskeklubben Vinga</h2>
+        </a>
+      </Link>
+      <div className="ml-auto d-none d-lg-block">
+        <MainMenu collapsed="nav justify-content-end" />
+      </div>
+      <div className="btn-group d-lg-none ml-auto">
+        <button className="navbar-toggler border-dark bg-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span className="navbar-toggler-icon" />
+        </button>
+        <div className="dropdown dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <MainMenu collapsed="nav justify-content-center" />
+        </div>
+      </div>
+    </nav>
+    <_JSXStyle styleId="topWrapper" css={`
+      div.topWrapper {
+        width: 100%;
+        height: 113px;
+        background-color: #fff;
+        padding: 0
+      }
+    `} />
+    <_JSXStyle styleId="topLogoText" css={`
+    h2.topLogoText {
+      margin:  0 0 0 10px;
+      display: inline-block;
+      font-style: italic;
+      }
+    `} />
+  </div>
+);
+
+export default Header;
