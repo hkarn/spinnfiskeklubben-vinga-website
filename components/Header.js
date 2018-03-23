@@ -5,9 +5,9 @@ import MainMenu from './MainMenu';
 const Header = () => (
 
   <div className="topWrapper container-fluid sticky-top">
-    <nav className="navbar navbar-light bg-white py-1 px-2">
+    <nav className="navbar navbar-light bg-white py-0 pl-1 pr-2">
       <Link href="/">
-        <a className="navbar-brand d-flex align-items-center" href="/">
+        <a className="navbar-brand d-flex align-items-center m-0 p-0" href="/">
           <img className="inline-block p-2" src="./static/images/logo.jpg" alt="Spinnfiskeklubben Vinga Logo" title="Till startsidan" />
           <h2 className="topLogoText inline-block" title="Till startsidan">Spinnfiskeklubben Vinga</h2>
         </a>
@@ -27,7 +27,7 @@ const Header = () => (
     <_JSXStyle styleId="topWrapper" css={`
       div.topWrapper {
         width: 100%;
-        height: 113px;
+        height: 105px;
         background-color: #fff;
         padding: 0
       }

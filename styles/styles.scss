@@ -24,12 +24,12 @@ body {
   }
 }
 
-.btn-success {
-  background-color: $success;
-  border-color: $success-hover;
+.btn-orange-action {
+  background-color: $orange;
+  border-color: $orange-hover;
   &:hover {
-    background-color: $success-hover;
-    border-color: $success;
+    background-color: $orange-hover;
+    border-color: $orange;
   }
 }
 
@@ -44,10 +44,10 @@ body {
 
 #slide {
   left: -100%;
-  -webkit-animation: slide 1.5s forwards;
-  -webkit-animation-delay: 1s;
-  animation: slide 1.5s forwards;
-  animation-delay: 1s;
+  -webkit-animation: slide 2.1s forwards;
+  -webkit-animation-delay: 5.2s;
+  animation: slide 2.1s forwards;
+  animation-delay: 5.2s;
 }
 
 @-webkit-keyframes slide {
@@ -77,7 +77,7 @@ body {
     width: 145px
   }
   .custom-responsive-text {
-    font-size: calc(69% + .5vw);
+    font-size: calc(60% + .5vw);
   }
  }
 
