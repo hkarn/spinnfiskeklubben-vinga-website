@@ -2,6 +2,7 @@ import Layout from '../components/MyLayout';
 import Head from 'next/head';
 import _JSXStyle from 'styled-jsx/style';
 import Slide from '../components/Slide';
+import Link from 'next/link';
 
 const slides = [
   'photos/view.jpg',
@@ -17,7 +18,7 @@ export default () => (
 
     <div className="innerCoverText text-center text-white">
       <h1 style={{textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'}}>Välkommen till Rävholmen</h1>
-      <a className="btn btn-info btn-lg">Läs mer om vår stuga &amp; verksamhet &gt;</a>
+      <Link href="/about"><a className="btn btn-info btn-lg">Läs mer om vår stuga &amp; verksamhet &gt;</a></Link>
     </div>
     <_JSXStyle styleId="innerCoverText" css={`
       div.innerCoverText {

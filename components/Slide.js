@@ -7,7 +7,7 @@ export default class Slide extends React.Component {
     this.state = {
       i: 0,
       j: 0,
-      frame: false,
+      frame: false
     };
     this.slides = [
       'photos/view.jpg',
@@ -38,7 +38,6 @@ export default class Slide extends React.Component {
   }
 
   doSlide = () => {
-
     const {slides = this.slides, duration = 3000} = this.props;
 
     const {i = 0, j = 1} = this.state;
