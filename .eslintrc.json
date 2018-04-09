@@ -20,13 +20,11 @@
             "error",
             2
         ],
-        "quotes": [
-            "error",
-            "single"
-        ],
+        "quotes": ["error","single", {"avoidEscape": true, "allowTemplateLiterals": true}],
+        "no-warning-comments": [1, { "terms": ["todo", "fixme", "debug"], "location": "anywhere" }],
         "semi": [
             "error",
-            "always"
+            "never"
         ],
         "react/react-in-jsx-scope": "off",
         "jsx-quotes": [
