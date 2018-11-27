@@ -3,7 +3,7 @@ import _JSXStyle from 'styled-jsx/style'
 
 export default () => (
   <Layout>
-    <div className="pageWrapper">
+    <div className="pageWrapper2">
       <article>
         <h1>Om Spinnfiskeklubben Vinga</h1>
         <h2 className="bilder"><a href="https://photos.app.goo.gl/4Dt2DLGGS6JXNMJu6">Bilder från Rävholmen</a></h2>
@@ -61,8 +61,8 @@ export default () => (
         <p>Sto Scandinavia AB</p>
       </article>
     </div>
-    <_JSXStyle styleId="pageWrapper" css={`
-      div.pageWrapper {
+    <_JSXStyle styleId="pageWrapper2" css={`
+      div.pageWrapper2 {
         width: 85%;
         margin: 25px auto;
       }
