@@ -3,7 +3,8 @@ module.exports = withSass({
   exportPathMap: function () {
     return {
       '/': {page: '/'},
-      '/about': {page: '/about'}
+      '/about': {page: '/about'},
+      '/members': {page: '/members'}
     };
   }
 });
